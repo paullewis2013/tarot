@@ -106,11 +106,9 @@ function dealCard(){
     const cardDisplay = document.getElementById("card")
     cardDisplay.src = "cards/" + card;
 
-    console.log(cardDisplay.style.width)
-
     return card;
 }
 
 deck = generateTarotDeck();
 shuffle(deck);
-console.log(deck);
+console.log('deck loaded');
