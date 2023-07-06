@@ -112,3 +112,7 @@ function dealCard(){
 deck = generateTarotDeck();
 shuffle(deck);
 console.log('deck loaded');
+
+document.addEventListener("keydown", function() {
+    dealCard();
+});
