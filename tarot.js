@@ -82,13 +82,7 @@ function generateTarotDeck(){
         'Wands14.png'
     ];
 
-    // function removePngExtension(array) {
-    //     const newArray = array.map((str) => str.replace(/\.png$/, ''));
-    //     return newArray;
-    // }
-
-    // deck = removePngExtension(deck);
-
+    shuffle(deck);
     return deck; 
 }
 
@@ -103,15 +97,25 @@ function shuffle(array) {
 function dealCard(){
     let card = deck.pop();
 
+    if (deck.length == 0){
+        deck = generateTarotDeck();
+        console.log('deck reloaded');
+    }
+
     const cardDisplay = document.getElementById("card")
     cardDisplay.src = "cards/" + card;
 
     card = card.replace(/\.png$/, '');
-    card = card.replace(/-/, ' ');
-    card = card.replace(/Cups/, 'Cups ');
-    card = card.replace(/Pentacles/, 'Pentacles ');
-    card = card.replace(/Swords/, 'Swords ');
-    card = card.replace(/Wands/, 'Wands ');
+    card = card.replace(/\d\d-/, ' ');
+    card = card.replace(/([A-Z])/g, ' $1');
+
+    card = card.replace(/(.+)(\d{2})/, '$2 of $1');
+
+    card = card.replace(/13/, 'Queen ');
+    card = card.replace(/14/, 'King ');
+    card = card.replace(/12/, 'Knight ');
+    card = card.replace(/11/, 'Page ');
+    card = card.replace(/01/, 'Ace ');
 
     let name = document.getElementById("name");
     name.innerHTML = card
@@ -120,7 +124,6 @@ function dealCard(){
 }
 
 deck = generateTarotDeck();
-shuffle(deck);
 console.log('deck loaded');
 
 document.addEventListener("keydown", function() {
