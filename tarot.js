@@ -106,6 +106,16 @@ function dealCard(){
     const cardDisplay = document.getElementById("card")
     cardDisplay.src = "cards/" + card;
 
+    card = card.replace(/\.png$/, '');
+    card = card.replace(/-/, ' ');
+    card = card.replace(/Cups/, 'Cups ');
+    card = card.replace(/Pentacles/, 'Pentacles ');
+    card = card.replace(/Swords/, 'Swords ');
+    card = card.replace(/Wands/, 'Wands ');
+
+    let name = document.getElementById("name");
+    name.innerHTML = card
+
     return card;
 }
 
