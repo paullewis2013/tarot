@@ -186,3 +186,7 @@ document.addEventListener("keydown", function() {
 document.addEventListener("touchstart", function() {
     dealCard();
 });
+
+document.addEventListener("click", function() {
+    dealCard();
+});
