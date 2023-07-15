@@ -178,3 +178,11 @@ function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
+
+document.addEventListener("keydown", function() {
+    dealCard();
+});
+
+document.addEventListener("touchstart", function() {
+    dealCard();
+});

@@ -125,7 +125,3 @@ function dealCard(){
 
 deck = generateTarotDeck();
 console.log('deck loaded');
-
-document.addEventListener("keydown", function() {
-    dealCard();
-});
