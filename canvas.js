@@ -183,9 +183,9 @@ document.addEventListener("keydown", function() {
     dealCard();
 });
 
-document.addEventListener("touchstart", function() {
-    dealCard();
-});
+// document.addEventListener("touchstart", function() {
+//     dealCard();
+// });
 
 document.addEventListener("click", function() {
     dealCard();
